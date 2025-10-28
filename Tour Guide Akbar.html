@@ -1,0 +1,548 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Explore Nusantara — Bandung Nature (Lembang · Pangalengan · Ciwidey) | Tour Guide: Muhamad Akbar Ergiansyah</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- AOS -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <!-- Simple icons for social -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg-dark:#07101a;
+      --card-dark:rgba(255,255,255,0.04);
+      --neon-1:#00b4d8;
+      --neon-2:#7b2ff7;
+      --glass-border: rgba(255,255,255,0.08);
+    }
+    *{box-sizing:border-box}
+    body{
+      font-family:'Poppins',sans-serif;
+      background: linear-gradient(180deg,#05060a 0%,var(--bg-dark) 60%);
+      color:#e6eef6;
+      transition: .35s ease all;
+    }
+    body.light-mode{
+      background: linear-gradient(180deg,#f6f8fb 0%, #eef2f7 60%);
+      color:#0b1220;
+    }
+
+    /* NAV */
+    .navbar {
+      background: linear-gradient(180deg, rgba(255,255,255,0.03), transparent);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+    }
+    .logo-mark{
+      width:44px;height:44px;border-radius:10px;
+      background: linear-gradient(135deg,var(--neon-1),var(--neon-2));
+      display:flex;align-items:center;justify-content:center;font-weight:800;color:#031022;
+      box-shadow:0 6px 30px rgba(123,47,247,0.12);
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 78vh;
+      display:flex;align-items:center;
+      padding:6rem 0;
+      position:relative;
+      overflow:hidden;
+    }
+    .hero .accent-words{
+      background: linear-gradient(90deg,var(--neon-1),var(--neon-2));
+      -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+      font-weight:800;font-size:2.6rem;
+      letter-spacing:-1px;
+      text-shadow: 0 6px 30px rgba(0,180,216,0.06);
+    }
+    /* Parallax-ish glowing orb */
+    .orb {
+      position:absolute; width:420px; height:420px; border-radius:50%;
+      filter: blur(70px); opacity:0.45;
+      background: radial-gradient(circle at 30% 30%, rgba(0,180,216,0.45), transparent 30%),
+                  radial-gradient(circle at 70% 70%, rgba(123,47,247,0.45), transparent 30%);
+      right:-120px; top:-80px; transform: rotate(15deg);
+    }
+
+    /* Glass card style */
+    .glass {
+      background: var(--card-dark);
+      border-radius:14px;
+      padding:22px;
+      border:1px solid var(--glass-border);
+      backdrop-filter: blur(8px);
+      transition: transform .35s ease, box-shadow .35s ease;
+    }
+    .glass:hover{ transform: translateY(-8px); box-shadow: 0 18px 50px rgba(11,17,34,0.6); }
+
+    /* Service cards */
+    .service-icon {
+      width:68px;height:68px;border-radius:12px;display:flex;align-items:center;justify-content:center;
+      background: linear-gradient(135deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+      border:1px solid rgba(255,255,255,0.04);
+    }
+
+    /* Gallery */
+    .gallery-img{ border-radius:12px; width:100%; height:220px; object-fit:cover; transition: transform .35s ease; }
+    .gallery-img:hover{ transform: scale(1.04); }
+
+    /* Team / profile */
+    .profile-photo{
+      width:160px;height:160px;border-radius:16px;object-fit:cover;border:4px solid rgba(123,47,247,0.18);
+      box-shadow: 0 10px 40px rgba(123,47,247,0.08);
+    }
+
+    /* Counters */
+    .counter { font-size:2.4rem; font-weight:800; color:var(--neon-1); }
+
+    /* Footer */
+    footer{ padding:36px 0; color:#bcd3e6; background: linear-gradient(180deg, transparent, rgba(0,0,0,0.12)); }
+
+    /* Light mode tweaks */
+    body.light-mode .glass{ background: rgba(255,255,255,0.78); color:#082036; border:1px solid rgba(7,10,20,0.06); }
+    body.light-mode .navbar{ background: rgba(255,255,255,0.8); border-bottom-color: rgba(7,10,20,0.04); }
+    body.light-mode .orb{ opacity:0.25; filter: blur(60px); }
+
+    /* responsive small */
+    @media (max-width:768px){
+      .hero .accent-words{ font-size:1.8rem; }
+      .orb{ display:none; }
+    }
+  </style>
+</head>
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-dark py-3 fixed-top">
+    <div class="container">
+      <a class="d-flex align-items-center gap-3 navbar-brand" href="#">
+        <div class="logo-mark">AE</div>
+        <div class="d-none d-sm-block">
+          <div style="font-weight:800">Explore Nusantara</div>
+          <small style="opacity:.75">Bandung Nature · Lembang · Pangalengan · Ciwidey</small>
+        </div>
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="nav">
+        <ul class="navbar-nav ms-auto align-items-center">
+          <li class="nav-item"><a class="nav-link" href="#destinations">Destinasi</a></li>
+          <li class="nav-item"><a class="nav-link" href="#packages">Paket</a></li>
+          <li class="nav-item"><a class="nav-link" href="#guide">Tour Guide</a></li>
+          <li class="nav-item"><a class="nav-link" href="#gallery">Galeri</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Reservasi</a></li>
+        </ul>
+
+        <div class="ms-3 d-flex align-items-center gap-2">
+          <button id="btnToggle" class="btn btn-outline-light btn-sm">Light Mode</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="orb" aria-hidden="true"></div>
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-7 text-lg-start text-center" data-aos="fade-right">
+          <h1 class="display-5 fw-bold">Explore Bandung <span class="accent-words">Alam & Budaya</span></h1>
+          <p class="lead mt-3" style="max-width:680px;">Panduan wisata alam premium: jelajahi Lembang, Pangalengan, dan Ciwidey dengan pengalaman yang aman, nyaman, dan penuh cerita lokal. Dipandu oleh <strong>Muhamad Akbar Ergiansyah</strong>, tour guide profesional.</p>
+
+          <div class="mt-4 d-flex gap-3 justify-content-center justify-content-lg-start">
+            <a href="#packages" class="btn btn-lg" style="background:linear-gradient(90deg,var(--neon-1),var(--neon-2)); color:white; box-shadow:0 14px 40px rgba(11,17,34,0.5)">Lihat Paket</a>
+            <a href="#contact" class="btn btn-outline-light btn-lg">Pesan Sekarang</a>
+          </div>
+
+          <div class="d-flex gap-3 mt-4 justify-content-center justify-content-lg-start">
+            <div class="glass px-3 py-2 text-center">
+              <div class="fw-bold">⛰️ 3 Destinasi</div>
+              <small style="opacity:.8">Lembang · Pangalengan · Ciwidey</small>
+            </div>
+            <div class="glass px-3 py-2 text-center">
+              <div class="fw-bold">✅ Keamanan & Transport</div>
+              <small style="opacity:.8">Driver berpengalaman & perlengkapan lengkap</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-5 mt-4 mt-lg-0" data-aos="fade-left">
+          <div class="glass p-3">
+            <!-- small itinerary preview -->
+            <h5 class="mb-3">Contoh Itinerary 2 hari</h5>
+            <ul class="list-unstyled mb-0">
+              <li>Hari 1: Lembang — Farmhouse, Tebing Keraton, Sunrise Spot</li>
+              <li>Hari 2: Pangalengan — Situ Cileunca; Ciwidey — Kawah Putih & Rancabali</li>
+            </ul>
+            <hr>
+            <div class="d-flex gap-2 align-items-center">
+              <div style="flex:0 0 62px;">
+                <img id="guidePhotoPreview" src="C:\Users\ASUS\Documents\kuliah semester 5\tugsas elearning pemrograman web\image\abi.jpg" alt="Profil Akbar" class="profile-photo">
+              </div>
+              <div>
+                <div class="fw-bold">Muhamad Akbar Ergiansyah</div>
+                <small style="opacity:.8">Certified Local Tour Guide · Bahasa: ID / EN</small>
+                <div class="mt-2">
+                  <a href="#" class="btn btn-sm btn-outline-light">Lihat Profil</a>
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- DESTINATIONS -->
+  <section id="destinations" class="py-5">
+    <div class="container">
+      <h2 class="mb-4 text-center" data-aos="fade-up">Destinasi Unggulan</h2>
+
+      <div class="row g-4">
+        <!-- LEMBANG -->
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="50">
+          <div class="glass h-100">
+            <img src="C:\Users\ASUS\Documents\kuliah semester 5\tugsas elearning pemrograman web\image\tangkuban-perahu.jpg" alt="Lembang" class="w-100 rounded-3 mb-3" style="height:220px; object-fit:cover;">
+            <h5 class="fw-bold">Lembang</h5>
+            <p class="small">Dikenal dengan dataran tinggi dan pemandangan sunrise, Lembang cocok untuk wisata keluarga dan fotografi alam.</p>
+            <ul class="small">
+              <li>Spot: Tangkuban Perahu, Farmhouse, Tebing Keraton, Floating Market</li>
+              <li>Aktivitas: Trekking ringan, foto sunrise, wisata kuliner</li>
+              <li>Tips: Bawa jaket tebal pagi & malam</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- PANGALENGAN -->
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="120">
+          <div class="glass h-100">
+            <img src="C:\Users\ASUS\Documents\kuliah semester 5\tugsas elearning pemrograman web\image\pangalengan.jpg" alt="Pangalengan" class="w-100 rounded-3 mb-3" style="height:220px; object-fit:cover;">
+            <h5 class="fw-bold">Pangalengan</h5>
+            <p class="small">Pangalengan menawarkan danau, perkebunan teh, dan suasana pedesaan yang asri — sempurna untuk camping dan bersepeda santai.</p>
+            <ul class="small">
+              <li>Spot: Situ Cileunca, perkebunan teh</li>
+              <li>Aktivitas: Perahu, camping, memancing</li>
+              <li>Tips: Periksa jadwal cuaca jika ingin kemah</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- CIWIDEY -->
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="190">
+          <div class="glass h-100">
+            <img src="C:\Users\ASUS\Documents\kuliah semester 5\tugsas elearning pemrograman web\image\kawah putih.jpeg" alt="Ciwidey" class="w-100 rounded-3 mb-3" style="height:220px; object-fit:cover;">
+            <h5 class="fw-bold">Ciwidey</h5>
+            <p class="small">Rumah Kawah Putih dan kebun strawberry — pengalaman alam unik dengan pemandangan kawah berwarna putih kehijauan.</p>
+            <ul class="small">
+              <li>Spot: Kawah Putih, Rancabali, perkebunan strawberi</li>
+              <li>Aktivitas: Photo walk, panen strawberi, tour kawah</li>
+              <li>Tips: Gunakan masker ringan di area kawah (bau belerang)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PACKAGES -->
+  <section id="packages" class="py-5 bg-transparent">
+    <div class="container">
+      <h2 class="mb-4 text-center" data-aos="fade-up">Paket Wisata Populer</h2>
+      <div class="row g-4">
+        <div class="col-md-4" data-aos="zoom-in">
+          <div class="glass h-100 p-4">
+            <div class="d-flex align-items-center gap-3 mb-3">
+              <div class="service-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M12 2v20" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+              </div>
+              <div>
+                <div class="fw-bold">Paket Sunrise Lembang</div>
+                <small class="fw-bold">1 Hari · Transport & Guide</small>
+              </div>
+            </div>
+            <p class="small">Rasakan sunrise di Tebing Keraton, kunjungi Farmhouse, dan nikmati sarapan lokal.</p>
+            <div class="d-flex justify-content-between align-items-center mt-3">
+              <div class="fw-bold">Rp 350.000</div>
+              <a href="#contact" class="btn btn-sm btn-outline-light">Pesan</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4" data-aos="zoom-in" data-aos-delay="80">
+          <div class="glass h-100 p-4">
+            <div class="d-flex align-items-center gap-3 mb-3">
+              <div class="service-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/></svg>
+              </div>
+              <div>
+                <div class="fw-bold">Paket Pangalengan Escape</div>
+                <small class="fw-bold">2 Hari · Camping Essentials</small>
+              </div>
+            </div>
+            <p class="small">Jelajah danau Situ Cileunca, perkebunan teh, dan pengalaman camping di alam.</p>
+            <div class="d-flex justify-content-between align-items-center mt-3">
+              <div class="fw-bold">Rp 650.000</div>
+              <a href="#contact" class="btn btn-sm btn-outline-light">Pesan</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4" data-aos="zoom-in" data-aos-delay="160">
+          <div class="glass h-100 p-4">
+            <div class="d-flex align-items-center gap-3 mb-3">
+              <div class="service-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M3 12h18" stroke="currentColor" stroke-width="1.6"/></svg>
+              </div>
+              <div>
+                <div class="fw-bold">Paket Ciwidey Wonders</div>
+                <small class="fw-bold">1 Hari · Kawah & Strawberi</small>
+              </div>
+            </div>
+            <p class="small">Kunjungi Kawah Putih dan kebun strawberi, lengkap dengan guide lokal.</p>
+            <div class="d-flex justify-content-between align-items-center mt-3">
+              <div class="fw-bold">Rp 420.000</div>
+              <a href="#contact" class="btn btn-sm btn-outline-light">Pesan</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery" class="py-5">
+    <div class="container">
+      <h2 class="mb-4 text-center" data-aos="fade-up">Galeri Foto (Asli & Relevan)</h2>
+      <div class="row g-3">
+        <!-- dynamic Unsplash queries that serve real photos matching keywords -->
+        <div class="col-md-4" data-aos="zoom-in">
+          <img class="gallery-img" src="C:\Users\ASUS\Documents\kuliah semester 5\tugsas elearning pemrograman web\image\tangkuban-perahu.jpg" alt="Lembang photo">
+        </div>
+        <div class="col-md-4" data-aos="zoom-in" data-aos-delay="60">
+          <img class="gallery-img" src="C:\Users\ASUS\Documents\kuliah semester 5\tugsas elearning pemrograman web\image\pangalengan.jpg" alt="Pangalengan photo">
+        </div>
+        <div class="col-md-4" data-aos="zoom-in" data-aos-delay="120">
+          <img class="gallery-img" src="C:\Users\ASUS\Documents\kuliah semester 5\tugsas elearning pemrograman web\image\ciwidey.jpeg" alt="Ciwidey photo">
+        </div>
+
+        <div class="col-md-4" data-aos="zoom-in" data-aos-delay="180">
+          <img class="gallery-img" src="C:\Users\ASUS\Documents\kuliah semester 5\tugsas elearning pemrograman web\image\kawah putih.jpeg" alt="Kawah Putih">
+        </div>
+        <div class="col-md-4" data-aos="zoom-in" data-aos-delay="240">
+          <img class="gallery-img" src="C:\Users\ASUS\Documents\kuliah semester 5\tugsas elearning pemrograman web\image\kebun.jpg" alt="Perkebunan Teh">
+        </div>
+        <div class="col-md-4" data-aos="zoom-in" data-aos-delay="300">
+          <img class="gallery-img" src="C:\Users\ASUS\Documents\kuliah semester 5\tugsas elearning pemrograman web\image\tebing keraton.jpg" alt="Sunrise Tebing Keraton">
+        </div>
+      </div>
+ 
+    
+  </section>
+
+  <!-- TOUR GUIDE PROFILE (kompleks & mudah diedit) -->
+  <section id="guide" class="py-5 bg-transparent">
+    <div class="container">
+      <h2 class="mb-4 text-center" data-aos="fade-up">Profil Tour Guide</h2>
+
+      <div class="row align-items-center g-4">
+        <!-- photo column -->
+        <div class="col-md-4 text-center" data-aos="fade-right">
+          <!-- NOTE: ganti src pada img#profilePhoto dengan URL foto kamu -->
+          <img id="profilePhoto" src="C:\Users\ASUS\Documents\kuliah semester 5\tugsas elearning pemrograman web\image\aku.jpg" class="profile-photo mb-3" alt="Foto Tour Guide">
+         
+        </div>
+
+        <div class="col-md-8" data-aos="fade-left">
+          <div class="glass p-4">
+            <h4 class="fw-bold mb-1">Muhamad Akbar Ergiansyah</h4>
+            <small class="fw-bold mb-1">Tour Guide · Certified · Bahasa: Indonesia, English</small>
+
+            <p class="mt-3">Saya adalah tour guide lokal Bandung berpengalaman, mengkhususkan pada wisata alam Lembang, Pangalengan, dan Ciwidey. Menyusun itinerary yang nyaman, aman, dan kaya pengalaman budaya lokal.</p>
+
+            <div class="row mt-3">
+              <div class="col-sm-4">
+                <div class="fw-bold">Pengalaman</div>
+                <div class="fw-bold">20 tahun</div>
+              </div>
+              <div class="col-sm-4">
+                <div class="fw-bold">Bahasa</div>
+                <div class="fw-bold">ID / EN</div>
+              </div>
+              <div class="col-sm-4">
+                <div class="fw-bold">Rating</div>
+                <div class="fw-bold">4.9 / 5</div>
+              </div>
+            </div>
+
+            <div class="d-flex gap-2 mt-3">
+              <a class="btn btn-sm" style="background:linear-gradient(90deg,var(--neon-1),var(--neon-2));color:white" href="#contact">Pesan Guide</a>
+            </div>
+
+            <div class="mt-3">
+              <small class="text-muted">Sosial:</small>
+              <div class="mt-1">
+                <a href="#" class="me-2">Instagram</a> · <a href="#" class="me-2">WhatsApp</a> · <a href="#">Website</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    
+  <!-- CONTACT / RESERVATION -->
+  <section id="contact" class="py-5">
+    <div class="container">
+      <h2 class="mb-4 text-center" data-aos="fade-up">Reservasi & Kontak</h2>
+      <div class="row justify-content-center">
+        <div class="col-lg-8" data-aos="zoom-in">
+          <form id="bookingForm" class="glass p-4">
+            <div class="mb-3">
+              <label class="form-label">Nama Lengkap</label>
+              <input name="name" class="form-control" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Email / WhatsApp</label>
+              <input name="contact" class="form-control" placeholder="Email atau nomor WA" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Paket / Destinasi</label>
+              <select name="package" class="form-select">
+                <option>Paket Sunrise Lembang</option>
+                <option>Paket Pangalengan Escape</option>
+                <option>Paket Ciwidey Wonders</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Tanggal Keberangkatan</label>
+              <input name="date" type="date" class="form-control" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Pesan Tambahan</label>
+              <textarea name="note" class="form-control" rows="3"></textarea>
+            </div>
+
+            <div class="d-flex justify-content-between align-items-center">
+              <button type="submit" class="btn btn-primary">Buat Reservasi</button>
+            </div>
+          </form>
+
+          <div id="bookingSummary" class="mt-3 d-none glass p-3"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="mt-5">
+    <div class="container text-center">
+      <div class="mb-2">© <span id="year"></span> Explore Nusantara — Tour Guide: <strong>Muhamad Akbar Ergiansyah</strong></div>
+    </div>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+  <script>
+    // init AOS
+    AOS.init({ duration: 900, once: true });
+
+    // Light / Dark toggle
+    const btnToggle = document.getElementById('btnToggle');
+    btnToggle.addEventListener('click', () => {
+      document.body.classList.toggle('light-mode');
+      const isLight = document.body.classList.contains('light-mode');
+      btnToggle.textContent = isLight ? 'Dark Mode' : 'Light Mode';
+      // tweak nav color class for readability
+      document.querySelectorAll('.nav-link').forEach(el => {
+        if(isLight) el.classList.remove('text-light'); else el.classList.add('text-light');
+      });
+    });
+
+    // Profile photo URL editor logic
+    const inputProfileURL = document.getElementById('inputProfileURL');
+    const applyProfileURL = document.getElementById('applyProfileURL');
+    const resetProfileURL = document.getElementById('resetProfileURL');
+    const profilePhoto = document.getElementById('profilePhoto');
+    const profileSrcText = document.getElementById('profileSrc');
+    const originalProfile = profilePhoto.src;
+
+    applyProfileURL.addEventListener('click', () => {
+      const url = inputProfileURL.value.trim();
+      if(url){
+        profilePhoto.src = url;
+        profileSrcText.textContent = url;
+      } else {
+        alert('Masukkan URL gambar yang valid atau biarkan kosong untuk reset.');
+      }
+    });
+
+    resetProfileURL.addEventListener('click', () => {
+      profilePhoto.src = originalProfile;
+      profileSrcText.textContent = originalProfile;
+      inputProfileURL.value = '';
+    });
+
+    // Booking form: show summary (no backend) so user can copy & paste to WA
+    const form = document.getElementById('bookingForm');
+    const summary = document.getElementById('bookingSummary');
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const data = new FormData(form);
+      const obj = Object.fromEntries(data.entries());
+      summary.classList.remove('d-none');
+      summary.innerHTML = `
+        <h5>Ringkasan Reservasi</h5>
+        <p><strong>Nama:</strong> ${obj.name}</p>
+        <p><strong>Kontak:</strong> ${obj.contact}</p>
+        <p><strong>Paket:</strong> ${obj.package}</p>
+        <p><strong>Tanggal:</strong> ${obj.date}</p>
+        <p><strong>Pesan:</strong> ${obj.note || '-'}</p>
+        <div class="mt-2">
+          <a class="btn btn-success btn-sm" href="https://wa.me/?text=${encodeURIComponent(
+            `Halo, saya ingin memesan paket ${obj.package} pada tanggal ${obj.date}. Nama: ${obj.name}. Kontak: ${obj.contact}. Pesan: ${obj.note || '-'}`
+          )}" target="_blank">Kirim Lewat WhatsApp</a>
+          <button class="btn btn-outline-light btn-sm" onclick="navigator.clipboard.writeText(document.getElementById('bookingSummary').innerText).then(()=>alert('Teks ringkasan disalin'))">Salin Ringkasan</button>
+        </div>
+      `;
+      window.scrollTo({ top: summary.offsetTop - 80, behavior: 'smooth' });
+    });
+
+    // counters appear once on scroll
+    let countersAnimated = false;
+    function animateCounters(){
+      if(countersAnimated) return;
+      const counters = document.querySelectorAll('.counter');
+      if(!counters.length) return;
+      const rect = counters[0].getBoundingClientRect();
+      if(rect.top < window.innerHeight){
+        countersAnimated = true;
+        const targets = [120, 85, 6, 3]; // sample targets: clients, reviews, years, guides
+        counters.forEach((c, i)=>{
+          let count = 0; const target = targets[i] || 50;
+          const step = Math.ceil(target / 80);
+          const tick = setInterval(()=> {
+            count += step;
+            if(count >= target){ c.innerText = target; clearInterval(tick); }
+            else c.innerText = count;
+          }, 12);
+        });
+      }
+    }
+    window.addEventListener('scroll', animateCounters);
+
+    // set year
+    document.getElementById('year').innerText = new Date().getFullYear();
+  </script>
+</body>
+</html>
